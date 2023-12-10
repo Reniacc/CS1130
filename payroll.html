@@ -1,0 +1,95 @@
+ <!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<br><br>
+<div>
+<h2>Simple Payroll</h2><br>
+
+<label for="name">Employee Name:</label>
+<input type="text" id="name"><br><br>
+
+<label for="days">Days Worked:</label>
+<input type="number" id="days"><br><br>
+
+<label for="rate">Daily Rate:</label>
+<input type="number" id="rate"><br><br>
+
+<label for="deductionamt">Deduction Amount:</label>
+<input type="number" id="deductionamt"><br><br>
+
+<button onclick="addEmployee()">Add Employee</button><br><br>
+<button onclick="deleteEmployee()">Remove Employee</button><br><br>
+<a href ="index.html" >Back to main</a>
+<br><br>
+<table id="payrollbody" style="max-width: 800px; margin:auto">
+<thead>
+  <tr>
+    <th>No.</th>
+    <th>Employee Name</th>
+    <th>Days Worked</th>
+    <th>Daily Rate</th>
+    <th>Gross Pay</th>
+    <th>Deduction Amount</th>
+    <th>Net Pay</th>
+  </tr>
+  </thead>
+</table>
+</div>
+<script>
+    payroll = [];
+    function addEmployee(){
+    var name = document.getElementById("name").value;
+    var days = document.getElementById("days").value;
+    var rate = document.getElementById("rate").value;
+    var deductionamt = document.getElementById("deductionamt").value;
+    var gross = days * rate;
+    var net = gross - deductionamt;
+    employee = {name, days, rate, deductionamt, gross, net};
+    document.getElementById("name").value = "";
+    document.getElementById("days").value = "";
+    document.getElementById("rate").value = "";
+    document.getElementById("deductionamt").value = "";
+    payroll.push(employee);
+    display();
+    }
+
+    function deleteEmployee(){
+    line = parseInt(prompt("Enter desired line number to delete:")) -1;
+    if (line >=0 && line < payroll.length){
+        payroll.splice(line, 1);
+        display();
+        }
+    else {
+        alert("Invalid")
+        }
+    }
+
+    function display(){
+    tablebody = document.getElementById("payrollbody");
+    for (let i = tablebody.rows.length - 1; i > 0; i--){
+        tablebody.deleteRow(i);
+    }
+    payroll.forEach((employee, index) => {
+            row = tablebody.insertRow(-1);
+            rowNum = row.insertCell(0);
+            namecell = row.insertCell(1);
+            dayscell = row.insertCell(2);
+            ratecell = row.insertCell(3);
+            grosscell = row.insertCell(4);
+            deductionamtcell = row.insertCell(5);
+            netcell = row.insertCell(6);
+            rowNum.innerHTML = index + 1;
+            namecell.innerHTML = employee.name;
+            dayscell.innerHTML = employee.days;
+            ratecell.innerHTML = employee.rate;
+            grosscell.innerHTML = employee.gross;
+            deductionamtcell.innerHTML = employee.deductionamt;
+            netcell.innerHTML = employee.net;
+        });
+    }
+</script>
+</body>
+</html>
