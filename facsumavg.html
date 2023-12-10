@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="styles.css">
+        </head>
+<form>
+    <div>
+        <br><br>
+            <h1>SIMPLE COMPUTATIONS</h1>
+             <label for="numA">Input Integer:</label>
+             <input type="number" id="numA" name="fname"><br><br>
+             <button type="button" id="fac">Show the Xth Factorial</button><br><br>
+			 <button type="button" id="sum">Show the sum for the first X numbers</button><br><br>
+			 <button type="button" id="avg">Show the average of the first X numbers</button><br><br>
+             <label for="numB">Result: </label>
+             <input type="number" id="numB" name="fname" readonly="readonly"><br><br>
+             <button id="btnclear">Clear</button><br><br>
+             <a href ="index.html" >Back to main</a>
+             </form>
+    </div>
+
+    <script>
+    document.getElementById("btnclear").addEventListener("click",
+    ()=>{
+        document.getElementById("numA").value = '';
+        document.getElementById("numB").value = '';
+    }
+    );
+
+    document.getElementById("fac").addEventListener("click",
+    ()=>{
+        var numA, numB, x, y;
+        numA = document.getElementById("numA").value * 1;
+		x = numA;
+		y = x - 1;
+		
+		while (y > 0){
+		x = y * x;
+		y -= 1;
+		}
+		
+        document.getElementById("numB").value = x;
+	}
+    );
+	
+	document.getElementById("sum").addEventListener("click",
+    ()=>{
+        var numA, numB, z, x, y;
+        numA = document.getElementById("numA").value * 1;
+		x = numA;
+		y = x - 1;
+		
+		do{
+		x += y;
+		y -= 1;
+		} while (y > 0);
+		
+        document.getElementById("numB").value = x;
+	}
+    );
+	
+	document.getElementById("avg").addEventListener("click",
+    ()=>{
+        var numA, numB, z, x, y;
+        numA = document.getElementById("numA").value * 1;
+		x = numA;
+		z = 1;
+		
+		for ( y = x-1; y > 0; y -= 1 ){
+		x += y;
+		z += 1;
+        }		
+		x = x / z;
+		
+        document.getElementById("numB").value = x;
+	}
+    );
+	
+    </script>
+</html>
