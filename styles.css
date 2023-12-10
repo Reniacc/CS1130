@@ -1,0 +1,114 @@
+/* Place your CSS styles in this file */
+
+h1 {
+    text-align: center;
+    font-family: "Source Sans Pro", sans-serif;
+    font-weight: normal;
+}
+table, th, td {
+  border:1px solid black; 
+}
+
+th {background-color: #2d59a1; font-family:trebuchet ms;
+        color:white; }
+
+td { background-color: white }
+
+/*div {text-align: center; font-family:trebuchet ms}*/
+
+h1, h2, label, a{margin: auto; text-align: center; font-family:Trebuchet MS, sans-serif}
+
+input {text-align: right}
+
+button {text-align: center; font-family:trebuchet ms; padding:10px;}
+
+div {text-align:center}
+
+.center {
+  text-align: center;
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+@keyframes fadeInSlideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.w3-content, h1, h2, label, a, button, table, input, img{
+  animation: fadeInSlideIn 1s ease-in-out; 
+}
+
+body {
+    background-image: linear-gradient(to bottom right, #edfbff, #29cfff, #d9b3ff);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.container {
+    height: 100%;
+    text-align: center;
+    width: 100%;
+    margin: auto;
+}
+
+.bottom-right-image {
+  position: fixed;
+  bottom: -50;
+  right: 0;
+  max-width: auto; 
+  max-height: auto; 
+  transition: transform 0.3s ease-out;
+}
+
+.bottom-right-image:active {
+  transform: translateY(-20px); 
+}
+
+.dialogue-box {
+  background-image: linear-gradient(to bottom, #edfbff, #ddf8ff, #cff5ff, #c9f3ff);
+  display: none;
+  border: 1px solid #ddd;
+  padding: 20px;
+  max-width: auto;
+  max-height: 600px;
+  text-align: center;
+  position: fixed;
+  bottom: 150px;
+  right: 400px;
+  animation: fadeInOut 0.5s ease-in-out;
+  }
+
+.dialogue-box1 {
+  background-image: linear-gradient(to bottom, #edfbff, #ddf8ff, #cff5ff, #c9f3ff);
+  border: 1px solid #ddd;
+  padding: 20px;
+  max-width: auto;
+  max-height: 600px;
+  text-align: center;
+  position: fixed;
+  bottom: 150px;
+  right: 400px;
+  animation: fadeInOut 0.5s ease-in-out;
+  }
+
+  @keyframes fadeInOut {
+  0% { opacity: 0; } 
+  100% { opacity: 1; } 
+
+.maintext {
+  background: rgba(255, 255, 255, 0.7);
+  border: black;
+  margin: auto;
+}
