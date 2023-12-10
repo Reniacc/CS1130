@@ -107,8 +107,9 @@ body {
   0% { opacity: 0; } 
   100% { opacity: 1; } 
 
-.maintext {
-  background: rgba(255, 255, 255, 0.7);
+.bg {
+  background-color: white;
   border: black;
   margin: auto;
+  opacity: 0.5;
 }
