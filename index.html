@@ -7,33 +7,49 @@
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="aronapng" href='https://postimg.cc/PCd68sVb'>
+<link rel="classroom" href='https://i.postimg.cc/6pQjdtQS/classroom.jpg'>
+<head>
+<link rel="stylesheet" href="styles.css">
+</head>
 <style>
-body {font-family: "Lato", sans-serif}
-.mySlides {display: none}
-</style>
+body {
+            background-image: url('https://i.postimg.cc/6pQjdtQS/classroom.jpg');
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+    </style>
 <body>
-
+<img src='https://i.postimg.cc/52CDTfwr/arona.png' border='0' id='arona' alt='arona' class="bottom-right-image"></a>
 <!-- Navbar -->
 <div class="w3-top">
-  <div class="w3-bar w3-black w3-card">
+  <div class="w3-bar w3-blue w3-card">
     <a class="w3-bar-item w3-button w3-padding-large w3-hide-medium w3-hide-large w3-right" href="javascript:void(0)" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
-    <a href="#" class="w3-bar-item w3-button w3-padding-large">HOME</a>
  
    
     <div class="w3-dropdown-hover w3-hide-small">
       <button class="w3-padding-large w3-button" title="More">Input Examples<i class="fa fa-caret-down"></i></button>     
            <div class="w3-dropdown-content w3-bar-block w3-card-4">
-             <a href="add2numbers.html" class="w3-bar-item w3-button">Add 2 numbers</a>
-             <a href="#" class="w3-bar-item w3-button">Fahrenheit to Celsius</a>
-            <a href="#" class="w3-bar-item w3-button">Meters to Feet</a>
-            <a href="#" class="w3-bar-item w3-button">Feet to Meters</a>
+            <a href="unitconversion.html" class="w3-bar-item w3-button">Unit Conversion (Fahrenheit to Celsius, etc.)</a>
+            <a href="incomecalc.html" class="w3-bar-item w3-button">Income Tax Calculator</a>
+            <a href="facsumavg.html" class="w3-bar-item w3-button">Factorial, Sum & Average of First N Numbers</a>
+            <a href="payroll.html" class="w3-bar-item w3-button">Simple Payroll</a>
       </div>
     </div>
 
    
    
   </div>
+
+  <div class="dialogue-box" id="dialogueBox">
+  On this website, you will be able to find a few simple actions in the top left!
+  </div>
+
+  <div class="dialogue-box1" id="dialogueBox1">
+  Welcome to this website!
+  </div>
 </div>
+
 
 <!-- Navbar on small screens (remove the onclick attribute if you want the navbar to always show on top of the content when clicking on the links) -->
 <div id="navDemo" class="w3-bar-block w3-black w3-hide w3-hide-large w3-hide-medium w3-top" style="margin-top:46px">
@@ -41,27 +57,22 @@ body {font-family: "Lato", sans-serif}
 </div>
 
 <!-- Page content -->
-<div class="w3-content" style="max-width:2000px;margin-top:46px">
+<div class="w3-content">
 
    <!-- The Band Section -->
   <div class="w3-container w3-content w3-center w3-padding-64" style="max-width:800px" id="band">
+    <div class="maintext">
     <h2 class="w3-wide">CS 1130 - Introduction to Computing</h2>
-     <br>
-     <h2>
-     Student Assignments:  
-     </h2>
+     <h4>
+     Kirby Conphil S. Vallespin's Website</h4>
+     <h5>
+     (best viewed in a fullscreen PC)</h5>
       <br>
-      <h3>Assignment #1 - Conversion (Celsius to Fahrenheit, Fahrenheit to Celsius, Meters to Feet, Feet to Meters)</h3>
-      <h3>Assignment #2 - Income Tax Calculator </h3>
-      <h3>Assignment #3 - Factorial (While Loop), Sum (Do While Loop) and Average (For Loop) of First N Natural Numbers</h3>
-      <h3>Assignment #4 - Simple Payroll </h3>
-
-      <br>
-      <h2>*** All Assignments are Due on December 6, 2023 *** </h2>
-      <h4> Upload and launch the pages in your specified github  or w3spaces website. </h4>
-     
-
-
+      <h4>Assignment #1 - Conversion (Celsius to Fahrenheit, Fahrenheit to Celsius, Meters to Feet, Feet to Meters)</h3>
+      <h4>Assignment #2 - Income Tax Calculator </h3>
+      <h4>Assignment #3 - Factorial (While Loop), Sum (Do While Loop) and Average (For Loop) of First N Natural Numbers</h3>
+      <h4>Assignment #4 - Simple Payroll </h3>
+      </div>
   </div>
 
   
@@ -69,21 +80,24 @@ body {font-family: "Lato", sans-serif}
 </div>
 
 <script>
-// Automatic Slideshow - change image every 4 seconds
-var myIndex = 0;
-carousel();
+    const arona = document.getElementById('arona');
+    const dialogueBox = document.getElementById('dialogueBox'); 
 
-function carousel() {
-  var i;
-  var x = document.getElementsByClassName("mySlides");
-  for (i = 0; i < x.length; i++) {
-    x[i].style.display = "none";  
-  }
-  myIndex++;
-  if (myIndex > x.length) {myIndex = 1}    
-  x[myIndex-1].style.display = "block";  
-  setTimeout(carousel, 4000);    
-}
+    document.addEventListener('DOMContentLoaded', function() {
+    const dialogueBox1 = document.getElementById('dialogueBox1');
+
+    setTimeout(function() {
+      dialogueBox1.style.display = 'none';
+    }, 5000);
+  });
+
+    arona.addEventListener('click', function() {
+      dialogueBox.style.display = (dialogueBox.style.display === 'none') ? 'block' : 'none';
+    
+      setTimeout(function() {
+          dialogueBox.style.display = 'none';
+        }, 5000);
+    });
 
 // Used to toggle the menu on small screens when clicking on the menu button
 function myFunction() {
