@@ -1,0 +1,55 @@
+ <!DOCTYPE html>
+<html>
+ <head>
+<link rel="stylesheet" href="styles.css">
+</head>
+<form>
+    <div>
+            <h1>SIMPLE COMPUTATIONS</h1><br>
+             <label for="numA">Input Taxable Income</label><br><br>
+             <input type="number" id="numA" name="fname"><br><br>
+             <button type="button" id="CtoF">Calculate Tax:</button><br><br>
+             <label for="numB">Result: </label><br><br>
+             <input type="number" id="numB" name="fname" readonly="readonly"><br><br>
+             <button id="btnclear">Clear</button><br><br>
+             <a href ="index.html" >Back to main</a>
+             </div>
+             </form>
+
+
+    <script>
+    document.getElementById("btnclear").addEventListener("click",
+    ()=>{
+        document.getElementById("numA").value = '';
+        document.getElementById("numB").value = '';
+    }
+    );
+
+    document.getElementById("CtoF").addEventListener("click",
+    ()=>{
+        var numA, numB, tax, x, y;
+        numA = document.getElementById("numA").value * 1;
+		if (numA < 250000) {
+        y = 0;
+		} else if (numA >= 250000 && numA < 400000){
+		x = numA - 250000;
+		y = x / 5;
+		} else if (numA >= 400000 && numA < 800000){
+		x = numA - 400000;
+		y = x / 4 + 30000;
+		} else if (numA >= 800000 && numA < 2000000){
+		x = numA - 800000;
+		y = x * 0.3 + 130000;
+		} else if (numA >= 2000000 && numA < 8000000){
+		x = numA - 2000000;
+		y = x * 0.32 + 490000;
+		} else if (numA >= 8000000){
+		x = numA - 8000000;
+		y = x * 0.35 + 2410000;
+		}
+		
+        document.getElementById("numB").value = y;
+	}
+    );
+    </script>
+</html>
